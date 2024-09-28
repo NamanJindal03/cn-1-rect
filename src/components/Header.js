@@ -1,4 +1,5 @@
 import '../style/Header.css'
+/* whatever we have seen below is a functional component */
 export default function Header(props){
     let {title} = props;
     title = 'me me me' //this should never ever be done
