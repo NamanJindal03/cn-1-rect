@@ -1,4 +1,4 @@
-export default function MovieCard({movie}){
+export default function MovieCard({movie, starRating}){
     const {title, description, img, rating} = movie;
     return (
         <div className="movieCard">
@@ -10,6 +10,7 @@ export default function MovieCard({movie}){
                 <div>{description}</div>
                 <div className="flex flexCenter">
                     <span>Rating: {rating}</span>
+                    <span>Stars: {starRating}</span>
                     <div>
                         <button>Save For Later</button>
                         <button>Buy Now</button>
