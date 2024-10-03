@@ -19,12 +19,22 @@ export default function App2() {
       setUser({...user, age: age})
 
     }
+    function editUserName(name){
+      //what code you will write over here to handle the
+      //state change
+      // let userTemp = user;
+      // userTemp.age = age;
+      // setUser(userTemp);
+
+      setUser({...user, name: name})
+
+    }
   return (
     <>
         {user ?
             <> 
               <UserDetails user={user}/> 
-              <EditUserDetails user={user} editUserAge={editUserAge}/>
+              <EditUserDetails user={user} editUserAge={editUserAge} editUserName={editUserName}/>
             </>
             : 
             <Login setUserProp={handleUserState}/>}

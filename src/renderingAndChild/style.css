@@ -1,0 +1,13 @@
+.red{
+    background-color: red;
+}
+
+.green{
+    background-color: green;
+}
+
+.bulb{
+    height: 100px;
+    width: 100px;
+    border-radius: 25%;
+}
