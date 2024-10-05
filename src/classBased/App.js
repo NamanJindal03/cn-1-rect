@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Component} from 'react'
 import Child from './Child'
 
 // export default function App() {
@@ -7,7 +7,7 @@ import Child from './Child'
 //   )
 // }
 
-export default class Car extends React.Component{
+export default class Car extends Component{
 
     render(){
         return (
