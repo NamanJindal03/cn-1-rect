@@ -1,13 +1,17 @@
 import React, {useState, useEffect} from 'react'
 
-export default function TodoApi() {
+export default function TodoApi({addTodo}) {
 
     const [todoData, setTodoData] = useState({});
     const [todoId, setTodoId] = useState(1);
+    
+
+    
 
     async function getTodo(){
         const jsonData = await fetch(`https://jsonplaceholder.typicode.com/todos/${todoId}`);
         const data = await jsonData.json();
+        addTodo(data);
         setTodoData(data)
     }
 
@@ -31,10 +35,18 @@ export default function TodoApi() {
     <>
         {console.log(todoData)}
         {console.log(todoData.userId)}
+        <div>
+            <button onClick={()=> setTodoId(todoId - 1)}>Prev</button>
+        </div>
         {todoData.userId}
         {todoData.id}
         {todoData.title}
-        {!todoData.completed && <button onClick={()=> setTodoId(todoId + 1)}>Next</button>}
+        <div>
+            {!todoData.completed && <button onClick={()=> setTodoId(todoId + 1)}>Next</button>}
+        </div>
+
+        {/* <h4>TODO List:</h4> */}
+        
     </>
   )
 }
