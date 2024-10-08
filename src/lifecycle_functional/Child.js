@@ -4,14 +4,19 @@ let count = 0;
 
 export default function Child() {
     const [noticeChange, setNoticeChange] = useState(false);
+    const [noticeChange2, setNoticeChange2] = useState(false);
     const [counter, setCounter] = useState(0)
 
     useEffect(()=>{
-        console.log('mounted! please perform your mounting actions');
+        console.log('mounted');
+        // setCounter(counter+1)
+        // console.log('mounted! please perform your mounting actions');
 
-        return ()=>{
-            console.log('unmounted! please perform your component cleanup actions')
-        }
+        // return ()=>{
+        //     console.log('unmounted! please perform your component cleanup actions')
+        // }
+
+
         // return ()=>{
         //     console.log('unmounted')
         // }
@@ -19,7 +24,8 @@ export default function Child() {
 
     useEffect(()=>{
         console.log('notice change triggered')
-        console.log(count++)
+        // console.log(count++);
+        // setNoticeChange(!noticeChange)
     }, [noticeChange, counter])
 
     // useEffect(()=>{
@@ -34,7 +40,7 @@ export default function Child() {
     // }, [])
   return (
     <>
-        {/* {console.log('jsx loaded')} */}
+        {console.log('jsx loaded')}
         <>
             <div>Child</div>
             <button onClick={()=> setNoticeChange(!noticeChange)}>Toggle State</button>

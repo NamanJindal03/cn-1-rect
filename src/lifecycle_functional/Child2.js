@@ -5,15 +5,15 @@ let timerId;
 export default function Child2() {
 
     const [count, setCounter] = useState(Math.floor(Math.random()*10));
-    // useEffect(() => {
-    //     let intervalId = setInterval(() => {
-    //         console.log(count)
-    //         // count++;
-    //         // console.log(count++);
-    //         setCounter(count + 1)
-    //     }, 1000);
-    //     return () => clearInterval(intervalId);
-    // }, [count])
+    useEffect(() => {
+        let intervalId = setInterval(() => {
+            console.log(count)
+            // count++;
+            // console.log(count++);
+            setCounter(count + 1)
+        }, 1000);
+        return () => clearInterval(intervalId);
+    }, [count])
 
     /* 
         setCounter((state)=>{
