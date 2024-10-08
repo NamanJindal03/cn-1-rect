@@ -6,7 +6,8 @@ import ReactDOM from 'react-dom/client';
 // import App2 from './conditionalRendering/App2';
 // import App from './renderingAndChild/App'
 // import App from "./classBased/App"
-import App from './lifecycle_functional/App'
+// import App from './lifecycle_functional/App'
+import App from './classBased/App'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
