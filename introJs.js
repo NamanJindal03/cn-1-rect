@@ -1,23 +1,9 @@
-
-function hof(cb){
-    console.log(cb) //function definition
-    cb()
+const obj = {
+    random(){
+        return () =>{console.log(this)}
+    }
 }
-  
-function sample(){
-    console.log('sample executed')
-}
+const newFunc = obj.random(); //obj
+newFunc()
 
-hof(() => {sample()})
-
-
-function hof2(cb){
-    console.log(cb) //function definition
-    cb()
-}
-  
-function sample2(){
-    console.log('sample executed')
-}
-
-hof(sample2)
+// setTimeout(obj.random, 1000)
