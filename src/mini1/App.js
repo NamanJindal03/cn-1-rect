@@ -7,6 +7,15 @@ export default function App() {
     // useEffect(()=>{
     //     document.title = `${firstName} ${lastName}`;
     // },[]);
+
+    useEffect(()=>{
+        let name = JSON.parse(localStorage.getItem('documentName'));
+        if(name){
+            setFirstName(name.firstName);
+            setLastName(name.lastName);
+        }
+    },[])
+
     useEffect(()=>{
         document.title = isTemp ? `temp ${firstName} ${lastName}` : `${firstName} ${lastName}`
     },[firstName, lastName, isTemp])
@@ -24,6 +33,7 @@ export default function App() {
 
     function handleFormSubmit(e){
         e.preventDefault();
+        localStorage.setItem('documentName', JSON.stringify({firstName, lastName}))
         setIsTemp(false);
     }
 
