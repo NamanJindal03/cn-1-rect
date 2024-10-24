@@ -13,25 +13,20 @@
 // export default Counter;
 import React from "react";
 import { useState, useReducer } from "react";
-
-function reducer(state, payload){
-    switch(payload.type){
-        case 'increment':
-            return state + 1
-        case 'decrement':
-            return state -1
-        default: 
-            return state
-    }
-}
-
+import reducer from "./reducers/counterReducer";
+import { INCREMENT, DECREMENT } from "./actions/counterActions";
+/* 
+    added another functionality in your application -> added another action
+*/
 function Counter() {
-    const [counter, dispatcher] = useReducer(reducer, 0)
+    const [counter, dispatcher] = useReducer(reducer, {count: 0})
     return (
         <>
-            <div>{counter}</div>
-            <button onClick={() => { dispatcher({type: 'increment'}) }}>+</button>
-            <button onClick={() => { dispatcher({type: 'decrement'}) }}>-</button>
+            <div>{counter.count}</div>
+            <button onClick={() => { dispatcher({type: INCREMENT, data: 1}) }}>+</button>
+            <button onClick={() => { dispatcher({type: DECREMENT}) }}>-</button>
+            <button onClick={() => { dispatcher({type: INCREMENT, data: 5}) }}>+5</button>
+            <button onClick={() => { dispatcher({type: INCREMENT, data: 10}) }}>+10</button>
         </>
     )
 }
