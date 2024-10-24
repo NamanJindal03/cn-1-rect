@@ -1,14 +1,14 @@
 import React from 'react'
 
-export default function BlogDisplay({blogs}) {
+export default function BlogDisplay({blogs, deleteBlog}) {
   return (
     <div>
         {blogs.map((blog)=>{
             return(
-                <div>
+                <div key={blog.id}>
                     <h3>{blog.title}</h3>
                     <p>{blog.content}</p>
-                    <button>Delete</button>
+                    <button onClick={()=>deleteBlog(blog.id)}>Delete</button>
                 </div>
             )
         })}

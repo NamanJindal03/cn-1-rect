@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { v4 as uuidv4 } from 'uuid';
 
 export default function BlogForm({addBlog}) {
     const [title, setTitle] = useState({data: '', error: ''});
@@ -16,10 +17,12 @@ export default function BlogForm({addBlog}) {
             isError = true;
             setContent({...content, error: 'Length should be greater than 10'})
         }
+
         if(isError){
             return;
         }
-        addBlog({title: title.data, content: content.data})
+        const id = uuidv4();
+        addBlog({title: title.data, content: content.data, id})
         setContent({data: '', error: ''});
         setTitle({data: '', error: ''})
     }
