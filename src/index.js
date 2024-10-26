@@ -15,11 +15,12 @@ import ReactDOM from 'react-dom/client';
 // import App from './blogMiniProject/App'
 // import App from './useReducer/App'
 // import App from './customHooks/localStorage/App'
-import App from './blogMiniProject/App'
+import App2 from './blogMiniProject/App2'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
-    <App />
+    <App2 />
 );
 
 

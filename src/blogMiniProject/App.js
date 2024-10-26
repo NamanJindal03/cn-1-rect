@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import BlogDisplay from './components/BlogDisplay'
 import BlogForm from './components/BlogForm'
 import { db } from './db/firebaseInit';
-import { collection, addDoc, doc, setDoc, getDocs, onSnapshot, query, orderBy  } from "firebase/firestore"; 
+import { collection, addDoc, doc, setDoc, getDocs, onSnapshot, query, orderBy, deleteDoc  } from "firebase/firestore"; 
 
 export default function App() {
     const [blogs, setBlogs] = useState([]);
@@ -40,7 +40,9 @@ export default function App() {
             setBlogs(blogFromDb)
             console.log(blogFromDb)
         });
-
+        return () => {
+            unsubscribe()
+        }
     },[])
     //TODO: way1
     // const addBlogInDb = async (title, content) => {
@@ -64,14 +66,16 @@ export default function App() {
         setBlogs([...blogs, {title, content, id}]);
     }
 
-    const deleteBlog = (id) => {
-        const filteredBlogs = blogs.filter((blog)=>{
-            if(blog.id === id){
-                return false
-            }
-            return true;
-        })
-        setBlogs(filteredBlogs)
+    const deleteBlog = async(id) => {
+        // const filteredBlogs = blogs.filter((blog)=>{
+        //     if(blog.id === id){
+        //         return false
+        //     }
+        //     return true;
+        // })
+        // setBlogs(filteredBlogs)
+        const info = await deleteDoc(doc(db, "mini-blog", id));
+        console.log(info)
     }
     
 
