@@ -1,0 +1,13 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.section-common-class{
+    min-width: 500px;
+    width: 80%;
+    margin: 0 auto;
+}
