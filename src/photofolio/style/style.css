@@ -11,3 +11,44 @@ body{
     width: 80%;
     margin: 0 auto;
 }
+
+.imageNavbar{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* imageCard */
+.imageCardContainer{
+    height: 10rem;
+    width: 16rem;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px rgb(190, 190, 190);
+    position: relative;
+}
+.cardImgImg{
+    height: 85%;
+    width: 100%;
+}
+.cardImgThumbnail{
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.circleButton{
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    color: white;
+    position: absolute;
+}
+.editButton{
+    background-color: lightblue;
+    top: -7px;
+    right: 10px;
+}
+.deleteButton{
+    background-color: red;
+    top: -7px;
+    right: -10px;
+}
