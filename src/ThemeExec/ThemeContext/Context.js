@@ -8,9 +8,9 @@ const ThemeProvider = ({children}) => {
         theme === 'dark' ? setTheme('light') : setTheme('dark')
     }
     return (
-        <ThemeContext value={{theme: theme, handleToggleTheme: handleToggleTheme}}>
+        <ThemeContext.Provider value={{theme: theme,  handleToggleTheme: handleToggleTheme}}>
             {children}
-        </ThemeContext>
+        </ThemeContext.Provider>
     )
 }
 export default ThemeProvider;

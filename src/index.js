@@ -18,7 +18,8 @@ import ReactDOM from 'react-dom/client';
 // import App2 from './blogMiniProject/App2'
 // import App from './photofolio/App'
 // import App from './contextAPI/App'
-import App from './contextAPIModern/App'
+// import App from './contextAPIModern/App'
+import App from './ThemeExec/App'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
