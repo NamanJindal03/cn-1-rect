@@ -8,7 +8,7 @@ export default function Provider({children}) {
         missionAccepted: false
     })
     function missionAccepted(){
-        setMission(true)
+        setMission({...mission, missionAccepted: true})
     }
   return (
     <MyContext.Provider
