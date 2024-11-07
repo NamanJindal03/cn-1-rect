@@ -12,7 +12,10 @@ export default function Provider({children}) {
     }
   return (
     <MyContext.Provider
-        value={{missionData: mission, missionAccepted: missionAccepted}}
+        value={{
+            missionData: mission, 
+            missionAccepted: missionAccepted
+        }}
     >
         {children}
     </MyContext.Provider>
