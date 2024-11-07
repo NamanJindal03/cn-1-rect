@@ -16,7 +16,8 @@ import ReactDOM from 'react-dom/client';
 // import App from './useReducer/App'
 // import App from './customHooks/localStorage/App'
 // import App2 from './blogMiniProject/App2'
-import App from './photofolio/App'
+// import App from './photofolio/App'
+import App from './contextAPI/App'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
