@@ -1,0 +1,11 @@
+.navUl{
+    display: flex;
+    column-gap: 5px;
+}
+.navUl > li{
+    list-style: none;
+}
+
+.active{
+    color: red;
+}
