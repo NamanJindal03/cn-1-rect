@@ -21,15 +21,13 @@ import ReactDOM from 'react-dom/client';
 // import App from './contextAPIModern/App'
 // import App from './ThemeExec/App'
 // import App from './react-router-dom/App'
-import App from './protectedRoutesRRD/App'
-import { BrowserRouter } from 'react-router-dom';
+// import App from './protectedRoutesRRD/App'
+import App from './RRDDataAPI/App'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-  <BrowserRouter>
     <App />
-  </BrowserRouter>
 );
 
 
