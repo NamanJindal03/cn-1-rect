@@ -1,0 +1,13 @@
+
+.productContainer{
+    display: flex;
+    gap: 10px;
+}
+.productCard{
+    border: 1px solid black;
+    padding: 2px;
+}
+.imgBox{
+    height: 150px;
+    width: 150px;
+}
