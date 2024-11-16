@@ -23,7 +23,8 @@ import ReactDOM from 'react-dom/client';
 // import App from './react-router-dom/App'
 // import App from './protectedRoutesRRD/App'
 // import App from './RRDDataAPI/App'
-import App from './busyBuy/App'
+// import App from './busyBuy/App'
+import App from './redux-counter/App'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
