@@ -5,7 +5,7 @@ const allCategories = ['men', 'women', 'kitchen', 'electronics'];
 export default function Home() {
     const [products, setProducts] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
-    const [priceFilterState, setPriceFilterState] = useState(75000);
+    const [priceFilterState, setPriceFilterState] = useState(2000);
     const [categoryFilterStates, setCategoryFilterStates] = useState({});
 
     useEffect(()=>{
@@ -24,25 +24,41 @@ export default function Home() {
         }
         setCategoryFilterStates(localCategoryBuilder) 
     },[])
-    function filterProducts(filteredPrice){
+    function filterProducts(filteredPrice, localCategoryFilterStates){
+        console.log(localCategoryFilterStates)
         const newFilteredProducts = products.filter((product)=>{
             if(product.price <= filteredPrice){
-                return true;
+                //another check -> includes -> 
+                const truthyCategories = []
+                for(let tempCategory in localCategoryFilterStates){
+                    console.log(tempCategory)
+                    console.log(localCategoryFilterStates[tempCategory])
+                    if(localCategoryFilterStates[tempCategory]){
+                        truthyCategories.push(tempCategory)
+                    }
+                }
+                console.log(truthyCategories)
+                if(truthyCategories.length === 0){
+                    return true
+                }
+                console.log(truthyCategories);
+                if(truthyCategories.includes(product.category)){
+                    return true;
+                }
             }
-            //another check -> includes -> 
+            
         })
         console.log(newFilteredProducts)
         setFilteredProducts([...newFilteredProducts]) 
     }
     function handlePriceFilter(e){
         setPriceFilterState(e.target.value);
-        filterProducts(e.target.value);
+        filterProducts(e.target.value, categoryFilterStates);
     }
     function handleCategoryFilter(e){
-        setCategoryFilterStates((prev)=>{
-            return {...prev, [e.target.name]: e.target.checked} //can cause issue
-        })
-        filterProducts(priceFilterState);
+        let updatedCategoryList = {...categoryFilterStates,[e.target.name]: e.target.checked }
+        setCategoryFilterStates(updatedCategoryList)
+        filterProducts(priceFilterState, updatedCategoryList);
     }
   return (
     <>
@@ -51,7 +67,7 @@ export default function Home() {
             <input 
                 type="range" 
                 min={0} 
-                max={100000} 
+                max={2000} 
                 value={priceFilterState} 
                 onChange={handlePriceFilter}
                 // onMouseUp={()=>filterProducts()}

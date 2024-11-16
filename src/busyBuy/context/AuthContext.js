@@ -4,7 +4,9 @@ export const AuthContext = React.createContext();
 const AuthProvider = (props)=>{
     const [user, setUser] = useState({name: 'naman', email: 'namanjindal@gmail.com'});
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+    function logout(){
+        setIsLoggedIn(false);
+    }
     return (
         <>
             <AuthContext.Provider
