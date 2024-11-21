@@ -1,6 +1,5 @@
 import React from 'react'
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { toggleTheme } from './ThemeSlice';
 export default function Nav() {
   const theme = useSelector((store) => store.theme)
@@ -8,7 +7,7 @@ export default function Nav() {
   return (
     <nav style={{backgroundColor: 'black', padding: "2px"}}>
         {/* number of items in the cart */}
-        <div>
+        <div style={{color: 'white'}}>
             CART: 
         </div>
         <button 
