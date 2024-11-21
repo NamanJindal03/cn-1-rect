@@ -8,6 +8,7 @@ export default function App(){
             <Provider store={store}>
                 <Nav />
                 <Counter />
+                <Products />
             </Provider>
         </div>
     )
