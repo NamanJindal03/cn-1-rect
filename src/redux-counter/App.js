@@ -6,6 +6,7 @@ export default function App(){
     return (
         <div className="App">
             <Provider store={store}>
+                <Nav />
                 <Counter />
             </Provider>
         </div>
