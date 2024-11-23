@@ -1,9 +1,9 @@
-import { createStore } from "redux";
+import { createStore, combineReducers } from "redux";
 
 const initialState = {
     count: 0
 }
-
+/* slice -> counterSlice */
 function counterReducer(state = initialState, action){
     switch(action.type){
         case 'INCREMENT':
@@ -15,6 +15,24 @@ function counterReducer(state = initialState, action){
     }
 }
 
-const store = createStore(counterReducer);
+const initialThemeState = {
+    theme: 'light'
+}
+
+function themeReducer(state = initialThemeState, action){
+    switch(action.type){
+        case 'TOGGLE_THEME':
+            return {...state, theme: state.theme === 'light'? 'dark': 'light' }
+        default:
+            return state
+    }
+}
+
+const rootReducer = combineReducers({
+    counter: counterReducer,
+    theme: themeReducer
+})
+
+const store = createStore(rootReducer);
 
 export default store;
