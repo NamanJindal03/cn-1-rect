@@ -4,7 +4,11 @@ const cartSlice = createSlice({
     name: 'Cart',
     initialState: [],
     reducers: {
+        /* 
+            {...state, add new thing} //so as rerender happens properly 
+        */
         addToCart(state, action){
+            //automatically -> 
             if(!state.includes(action.payload.id)){
                 state.push(action.payload.id)
             }

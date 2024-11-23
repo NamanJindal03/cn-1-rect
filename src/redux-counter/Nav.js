@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleTheme } from './ThemeSlice';
 export default function Nav() {
-  const theme = useSelector((store) => store.theme);
+  const theme = useSelector((store) => store.theme); //if you take wrong state then the optimization cost is very high
   const cartData = useSelector((store)=> store.cart);
   const dispatch = useDispatch();
   return (
