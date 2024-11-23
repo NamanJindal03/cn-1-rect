@@ -23,6 +23,8 @@ function themeReducer(state = initialThemeState, action){
     switch(action.type){
         case 'TOGGLE_THEME':
             return {...state, theme: state.theme === 'light'? 'dark': 'light' }
+        case 'INCREMENT':
+            return {...state, theme: state.theme === 'light'? 'dark': 'light' }
         default:
             return state
     }
