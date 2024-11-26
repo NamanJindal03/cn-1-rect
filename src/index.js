@@ -26,7 +26,8 @@ import ReactDOM from 'react-dom/client';
 // import App from './busyBuy/App'
 // import App from './redux-counter/Main'
 // import App from './vanilla-redux-counter/App'
-import App from './custom-thunk/App'
+// import App from './custom-thunk/App'
+import App from './asyncThunk/App'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
