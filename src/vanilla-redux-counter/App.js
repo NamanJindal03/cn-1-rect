@@ -10,7 +10,7 @@ import Counter from './Counter';
 
 export default function App() {
   return (
-    <Provider store={store}>
+    <Provider store={store}> {/* connected the store ton my application */}
         <Counter />
         
     </Provider>
